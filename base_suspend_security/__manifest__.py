@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    This module copyright (C) 2015 Therp BV <http://therp.nl>.
@@ -19,7 +18,7 @@
 ##############################################################################
 {
     "name": "Suspend security",
-    "version": "10.0.1.0.0",
+    "version": "12.0.1.0.0",
     "author": "Therp BV, Odoo Community Association (OCA)",
     "license": "AGPL-3",
     "category": "Hidden/Dependency",
