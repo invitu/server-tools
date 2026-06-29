@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_automatic_validation_rule_user,automatic.validation.rule user,model_automatic_validation_rule,base.group_user,1,0,0,0
+access_automatic_validation_rule_system,automatic.validation.rule system,model_automatic_validation_rule,base.group_system,1,1,1,1

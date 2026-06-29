@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 INVITU (<https://www.invitu.com>)
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record id="view_automatic_validation_rule_list" model="ir.ui.view">
+        <field name="model">automatic.validation.rule</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="sequence" widget="handle" />
+                <field name="name" />
+                <field name="model" />
+                <field name="check_type" />
+                <field name="company_id" groups="base.group_multi_company" />
+                <field name="active" />
+            </list>
+        </field>
+    </record>
+
+    <record id="view_automatic_validation_rule_form" model="ir.ui.view">
+        <field name="model">automatic.validation.rule</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name" />
+                            <field name="model" />
+                            <field name="sequence" />
+                            <field name="active" />
+                        </group>
+                        <group>
+                            <field name="check_type" />
+                            <field
+                                name="company_id"
+                                groups="base.group_multi_company"
+                            />
+                        </group>
+                    </group>
+                    <group>
+                        <field name="description" />
+                    </group>
+                    <notebook>
+                        <page
+                            name="domain"
+                            string="Domain"
+                            invisible="check_type != 'by_domain'"
+                        >
+                            <field
+                                name="domain"
+                                widget="domain"
+                                options="{'model': 'model'}"
+                            />
+                        </page>
+                        <page
+                            name="code"
+                            string="Code"
+                            invisible="check_type != 'by_py_code'"
+                        >
+                            <field name="code" widget="code" />
+                        </page>
+                        <page
+                            name="method"
+                            string="Method"
+                            invisible="check_type != 'by_method'"
+                        >
+                            <field name="method" />
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_automatic_validation_rule" model="ir.actions.act_window">
+        <field name="name">Validation Rules</field>
+        <field name="res_model">automatic.validation.rule</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

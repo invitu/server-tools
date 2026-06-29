@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 INVITU (<https://www.invitu.com>)
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <menuitem
+        id="menu_automatic_validation_root"
+        name="Automatic Validation"
+        sequence="100"
+        groups="base.group_system"
+    />
+    <menuitem
+        id="menu_automatic_validation_config"
+        name="Configuration"
+        parent="menu_automatic_validation_root"
+        sequence="10"
+    />
+    <menuitem
+        id="menu_automatic_validation_rule"
+        name="Validation Rules"
+        parent="menu_automatic_validation_config"
+        action="action_automatic_validation_rule"
+        sequence="10"
+    />
+</odoo>
